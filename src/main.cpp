@@ -1,77 +1,73 @@
-//Libraries
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <ESPAsyncTCP.h>
 #define WEBSERVER_H "fix confict"
 #include <WiFiManager.h>
-#include <ESPAsyncWebServer.h>
 #include <ESPAsyncHTTPUpdateServer.h>
-#include <LittleFS.h>
-//#include <ArduinoJson.h>
-#include <RunningMedian.h>
 #include <SSD1306.h>
+#include <RunningMedian.h>
 
-OLED oled(128, 64);
-RunningMedian samples = RunningMedian(5);
-//WiFiManager wifiManager;
-//ESPAsyncHTTPUpdateServer updateServer;
-//AsyncWebServer server(80);
+// --- Hardware Definitions ---
+// User specified library constructor
+OLED oled(128, 64); 
+RunningMedian samples = RunningMedian(10); 
+WiFiManager wifiManager;
+ESPAsyncHTTPUpdateServer updateServer;
+AsyncWebServer server(80);
 
-// pinout def
 const int PIN_ENCODER_BUTTON = 13;
 const int PIN_ENCODER_A = 0;
 const int PIN_ENCODER_B = 2;
 const int PIN_ADC = A0;
 const int BEEPER = 15;
-const int oled_sda = 4;
-const int oled_scl = 5;
-const int heater_pin = 12;
-const int fan_pin = 14;
-//the lower pins of the esp8266-12e must not be used (6 to 11)
+const int HEATER_PIN = 12;
+const int FAN_PIN = 14;
 
-// const values
+// --- Constants ---
 const int sResistor = 235000;
-const int thermistor_R_nom = 100000; // 100k thermistor
+const int thermistor_R_nom = 100000;
 const int thermistor_beta_coef = 3974.0;
-const int thermistor_nom_temp = 298.15;//273;
-const int temp_histerisis = 10;
+const int thermistor_nom_temp = 298.15;
+const float TEMP_HYSTERESIS = 2.0;
 
-volatile int encoderPos = 0;
+// --- Global Variables ---
+volatile int encoderCount = 0; 
 unsigned long lastDisplayUpdate = 0;
-const unsigned long DISPLAY_UPDATE_INTERVAL = 100; // Update every 100ms
-const int Display_timeout = 30000;
-bool buttonActive = false;     // For debouncing
+unsigned long cookStartTime = 0;
+bool buttonActive = false;     
 bool flipAlertDone = false;
 
-//variables related to cooking (use it for quick recipes?)
-struct cooking_vars{
-  unsigned long cook_time;
+// --- State Machine ---
+enum SystemState {
+  STATE_SET_TEMP,
+  STATE_SET_TIME,
+  //STATE_PREHEATING, //not sure if I need this
+  STATE_COOKING,
+  STATE_DONE
+};
+SystemState currentState = STATE_SET_TEMP;
+
+struct cooking_vars {
+  unsigned long duration_minutes;
   float target_temp;
-  bool flip;
-}; 
-cooking_vars cook = {30, 200, false}; //generic
+} cook;
 
-
-float readTemp() {
-  //takes the adc, filters and then converts to ºC
-  int raw_ADC = analogRead(PIN_ADC);
-  samples.add(raw_ADC);
-  int ADC = samples.getMedian(); 
-  //converts the ADC from the esp8266 to a voltage value (yes the ADC goes from 0v to 1v)
-  float voltage = ADC * (1.0/ 1024);
-  //calculates the thermistor resistance (ohms) with a reorganized voltage divider equation
-  float thermistor_R = (voltage*sResistor)/(3.3-voltage);
-  //equation that takes the resistance of the thermistor and returns a temperature
-  float tempC = ((thermistor_beta_coef * thermistor_nom_temp) / (thermistor_beta_coef + (thermistor_nom_temp * log(thermistor_R / thermistor_R_nom))))-273.15;
-  return tempC;
+// --- ISR: Encoder Interrupt ---
+void IRAM_ATTR updateEncoder() {
+  if (digitalRead(PIN_ENCODER_B) == HIGH) {
+    encoderCount++;
+  } else {
+    encoderCount--;
+  }
 }
-// Helper: Button Press Detection (Non-Blocking)
+
+// --- Helper: Button Press Detection (Non-Blocking) ---
 bool isButtonPressed() {
   if (digitalRead(PIN_ENCODER_BUTTON) == LOW) {
     if (!buttonActive) {
       buttonActive = true;
-      delay(20); // Tiny debounce
-      return true; // Trigger once
+      delay(20); // Debounce
+      return true; 
     }
   } else {
     buttonActive = false;
@@ -79,136 +75,175 @@ bool isButtonPressed() {
   return false;
 }
 
-void controlTemp(float targetTemp)
-{
-  float temp = readTemp();
-  if(temp>80){
-    digitalWrite(fan_pin,HIGH);
-  } else {
-    digitalWrite(fan_pin,LOW);
-  }
+// --- Helper: Read Temperature ---
+float readTemp() {
+  int raw_ADC = analogRead(PIN_ADC);
+  samples.add(raw_ADC);
+  
+  if (samples.getMedian() == 0) return 0.0; // Protect against div/0
 
-  if (targetTemp < temp + temp_histerisis){
-    digitalWrite(heater_pin,HIGH);
-  } else if (targetTemp > temp + temp_histerisis){
-    digitalWrite(heater_pin,LOW);
-  }
-
-  return;
+  float voltage = samples.getMedian() * (1.0 / 1024.0);
+  // Ensure your divider math matches your physical wiring!
+  float thermistor_R = (voltage * sResistor) / (3.3 - voltage);
+  
+  float tempC = ((thermistor_beta_coef * thermistor_nom_temp) / 
+                (thermistor_beta_coef + (thermistor_nom_temp * log(thermistor_R / thermistor_R_nom)))) - 273.15;
+  return tempC;
 }
 
-void beep(int duration,int freq = 1000){
+// --- Helper: Beep ---
+void beep(int duration, int freq = 1000) {
   tone(BEEPER, freq, duration);
 }
 
-bool tempSet = false;
-bool timeSet = false;
-
-void updateLCD(){
-  if (millis() - lastDisplayUpdate < DISPLAY_UPDATE_INTERVAL) {
-    return;  // Don't update too frequently
-  }
-  lastDisplayUpdate = millis();
-  //menu logic goes here: set temperature, then time, then start cooking.
-  //once cooking, show the remaining time and current temperature.
-  //once everything is working add a timeout for the display to prevent burn in of the oled.
-  if (digitalRead(PIN_ENCODER_BUTTON)==LOW){
-    
-    while (tempSet == false)
-    {
-      if (encoderPos < 0) encoderPos = 0; //prevent negative temperatures
-      cook.target_temp = encoderPos;
-      oled.print(String(encoderPos) + " C", 30, 30);
-      oled.inflate();
-      if (digitalRead(PIN_ENCODER_BUTTON)==LOW) tempSet = true;
-    }
-    encoderPos = 0;
-    beep(100);
-  }
-  if (tempSet == true && timeSet == false){
-    while (timeSet == false){
-      if (encoderPos < 0) encoderPos = 0; //prevent negative time
-      cook.cook_time = encoderPos;
-      oled.print(String(encoderPos) + " T", 30, 30);
-      oled.inflate();
-      if (digitalRead(PIN_ENCODER_BUTTON)==LOW) tempSet = true;
-    }
-    encoderPos = 0;
-    beep(100);
-  }
-
-  oled.clearScr();
-  //  oled.print(String(encoderPos) + " C", 30, 0);
-  //  oled.print(String(readTemp()) + " C", 30, 45);
-  //  oled.rectangle(15, 15, 100, 30, 5, 2, false); // Draw a rectangle at (15, 15) with width 100, height 30, 5px corner radius, and 2px thickness
-  //  oled << "Hello World!" << 30 << 25; // Print "Hello World!" inside the rectangle
-  //  oled.inflate(); // Render the items on the display
-}
-
-
-void cook_cicle()
-{
-  //for now it locks the program in a while loop until the cooking is done, may change to a state machine later.
-  beep(100);
-  bool flipped;
-  unsigned long cook_time_start = millis();
-  while(millis() - cook_time_start < cook.cook_time*1000)
-  {
-    controlTemp(cook.target_temp);
-    updateLCD();
-    //warns the user to flip halfway through cooking
-    if(cook.flip == true && flipped == false && millis() - cook_time_start > (cook.cook_time*500))
-    {
-      beep(1000,2000);
-      beep(500,2000);
-      beep(1300,2000);
-      flipped = true;
-    }
-  }
-}
-
-void IRAM_ATTR updateEncoder()
-{
-  // Read the current state of the DT pin
-  int dtValue = digitalRead(PIN_ENCODER_B);
+// --- Core Logic: Temperature Control ---
+void runControlLoop() {
+  float currentTemp = readTemp();
   
-  // If DT state is HIGH, we moved Counter-Clockwise
-  // If DT state is LOW, we moved Clockwise
-  // (Note: You might need to swap ++ and -- depending on your specific hardware)
-  if (dtValue == HIGH) {
-    encoderPos++;
+  if (currentTemp > 80 || currentState == STATE_COOKING) { // Fan safety threshold
+    digitalWrite(FAN_PIN, LOW);
   } else {
-    encoderPos--;
+    digitalWrite(FAN_PIN, HIGH);
+  }
+
+  // Only heat if we are actually in cooking state
+  if (currentState == STATE_COOKING) {
+    if (currentTemp < cook.target_temp - TEMP_HYSTERESIS) {
+      digitalWrite(HEATER_PIN, HIGH);
+    } else if (currentTemp > cook.target_temp) {
+      digitalWrite(HEATER_PIN, LOW);
+    }
+  } else {
+    digitalWrite(HEATER_PIN, LOW);
   }
 }
 
-void setup() 
-{
-  Serial.begin(115200);
-  oled.begin();
-  pinMode(PIN_ADC,INPUT);
-  pinMode(PIN_ENCODER_BUTTON,INPUT);
-  pinMode(PIN_ENCODER_A,INPUT);
-  pinMode(PIN_ENCODER_B,INPUT);
-  pinMode(BEEPER,OUTPUT);
-  pinMode(heater_pin,OUTPUT);
-  pinMode(fan_pin,OUTPUT);
+// --- Display Rendering (Updated for styropyr0/SSD1306) ---
+void drawUI(float currentTemp) {
+  oled.clearScr(); // Library specific clear
 
-  attachInterrupt(PIN_ENCODER_A, updateEncoder, FALLING);
+  switch (currentState) {
+    case STATE_SET_TEMP:
+      oled.print("Set Temp:", 10, 10);
+      // Using Big numbers if your library supports valid fonts, otherwise standard print
+      oled.print(String((int)cook.target_temp) + " C", 30, 30);
+      break;
 
-  //wifiManager.autoConnect("AutoConnectAP", "password123");
+    case STATE_SET_TIME:
+      oled.print("Set Time:", 10, 10);
+      oled.print(String((int)cook.duration_minutes) + " Min", 30, 30);
+      break;
 
-  //server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
-  //      request->send(200, "text/plain", "Hello, world");
-  //  });
+    case STATE_COOKING: {
+      unsigned long elapsed = (millis() - cookStartTime) / 1000;
+      unsigned long totalSeconds = cook.duration_minutes * 60;
+      long remaining = totalSeconds - elapsed;
+      if (remaining < 0) remaining = 0;
 
-  //server.begin();
+      oled.print("Cooking...", 0, 0);
+      oled.print("T:" + String((int)currentTemp) + "C", 80, 0);
+      
+      String timeStr = String(remaining / 60) + ":" + ((remaining % 60 < 10) ? "0" : "") + String(remaining % 60);
+      oled.print(timeStr, 30, 30);
+      break;
+    }
+
+    case STATE_DONE:
+      oled.print("DONE!", 40, 30);
+      break;
+  }
+  
+  oled.inflate(); // Library specific render command
 }
 
-void loop() 
-{
-  //Serial.println("Got Here");
-  updateLCD();
-  //cook_cicle();
-  delay(100);
+void setup() {
+  Serial.begin(115200);
+  
+  // Library specific init
+  oled.begin(); 
+  
+  pinMode(PIN_ADC, INPUT);
+  // NOTE: Changed to INPUT_PULLUP. If you have a physical resistor, change back to INPUT
+  pinMode(PIN_ENCODER_BUTTON, INPUT_PULLUP); 
+  pinMode(PIN_ENCODER_A, INPUT);
+  pinMode(PIN_ENCODER_B, INPUT);
+  pinMode(BEEPER, OUTPUT);
+  pinMode(HEATER_PIN, OUTPUT);
+  pinMode(FAN_PIN, OUTPUT);
+
+  attachInterrupt(digitalPinToInterrupt(PIN_ENCODER_A), updateEncoder, FALLING);
+
+  wifiManager.autoConnect("AutoConnectAP", "password123");
+  server.begin();
+  
+  // Initial Defaults
+  cook.target_temp = 180;
+  cook.duration_minutes = 30;
+  encoderCount = 180; 
+}
+
+void loop() {
+  float currentT = readTemp();
+  runControlLoop();
+
+  switch (currentState) {
+    // --- STEP 1: SELECT TEMPERATURE ---
+    case STATE_SET_TEMP:
+      if (encoderCount < 0) encoderCount = 0;
+      if (encoderCount > 250) encoderCount = 250;
+      cook.target_temp = encoderCount;
+
+      if (isButtonPressed()) {
+        beep(100);
+        currentState = STATE_SET_TIME;
+        encoderCount = 30; // Reset encoder for Time
+      }
+      break;
+
+    // --- STEP 2: SELECT TIME ---
+    case STATE_SET_TIME:
+      if (encoderCount < 1) encoderCount = 1;
+      if (encoderCount > 120) encoderCount = 120;
+      cook.duration_minutes = encoderCount;
+
+      if (isButtonPressed()) {
+        beep(200);
+        cookStartTime = millis();
+        flipAlertDone = false;
+        currentState = STATE_COOKING;
+      }
+      break;
+
+    // --- STEP 3: COOKING PROCESS ---
+    case STATE_COOKING:
+      if (millis() - cookStartTime >= (cook.duration_minutes * 60 * 1000)) {
+        beep(1000);
+        currentState = STATE_DONE;
+      }
+      // Halfway Alert 
+      if (!flipAlertDone && (millis() - cookStartTime > (cook.duration_minutes * 60 * 1000) / 2)) {
+         beep(200); delay(100); beep(200); 
+         flipAlertDone = true;
+      }
+      // Cancel with button
+      if (isButtonPressed()) {
+        currentState = STATE_SET_TEMP;
+        encoderCount = cook.target_temp;
+      }
+      break;
+
+    // --- STEP 4: FINISHED ---
+    case STATE_DONE:
+      if (isButtonPressed()) {
+        currentState = STATE_SET_TEMP;
+        encoderCount = 180;
+      }
+      break;
+  }
+
+  // Update Display periodically
+  if (millis() - lastDisplayUpdate > 100) {
+    drawUI(currentT);
+    lastDisplayUpdate = millis();
+  }
 }
