@@ -18,13 +18,15 @@ ESPAsyncHTTPUpdateServer updateServer;
 AsyncWebServer server(80);
 
 // pinout def
-const int PIN_ADC = 0;
 const int PIN_ENCODER_BUTTON = 13;
 const int PIN_ENCODER_A = 14;
 const int PIN_ENCODER_B = 12;
-const int BEEPER = 13;
+const int PIN_ADC = 0;
+const int BEEPER = 15;
 const int oled_sda = 4;
 const int oled_scl = 5;
+const int heater_pin = 11;
+const int fan_pin = 7;
 
 // const values
 const int sResistor = 235000;
@@ -33,6 +35,8 @@ const int thermistor_beta_coef = 3974.0;
 const int thermistor_nom_temp = 298.15;//273;
 
 volatile int encoderPos = 0;
+unsigned long lastDisplayUpdate = 0;
+const unsigned long DISPLAY_UPDATE_INTERVAL = 100; // Update every 100ms
 
 float readTemp() {
   //takes the adc, filters and then converts to ºC
@@ -57,9 +61,9 @@ float readTemp() {
 void measureTemp(){
   float temp = readTemp();
   if(temp>80){
-    digitalWrite(PIN_ADC,HIGH);
+    digitalWrite(fan_pin,HIGH);
   } else {
-    digitalWrite(PIN_ADC,LOW);
+    digitalWrite(fan_pin,LOW);
   }
   return;
 }
@@ -69,16 +73,19 @@ void beep(){
 }
 
 void updateLCD(){
-  char buffer[7];
-  itoa(encoderPos, buffer, 10); // 10 is the base (decimal)
+  if (millis() - lastDisplayUpdate < DISPLAY_UPDATE_INTERVAL) {
+    return;  // Don't update too frequently
+  }
+  lastDisplayUpdate = millis();
 
-    oled.begin();
-    oled.print(buffer, 0, 0);
+    oled << "aaaaaAAaaaaa" << 64 << 32; // Print "Hello World!" at the center of the screen
+    oled.inflate(); // Render the items on the display
+    oled.print(String(encoderPos) + " Hello, World!", 0, 0);
 }
 
 
 void cook(){
-  tone(BEEPER,100);
+  //tone(BEEPER,100);
 }
 
 void IRAM_ATTR updateEncoder(){
@@ -97,6 +104,7 @@ void IRAM_ATTR updateEncoder(){
 
 void setup() {
   Serial.begin(115200);
+  oled.begin();
   pinMode(PIN_ADC,INPUT);
   pinMode(PIN_ENCODER_BUTTON,INPUT);
   pinMode(PIN_ENCODER_A,INPUT);
