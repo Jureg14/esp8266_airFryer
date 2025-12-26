@@ -13,9 +13,9 @@
 
 OLED oled(128, 64);
 RunningMedian samples = RunningMedian(5);
-WiFiManager wifiManager;
-ESPAsyncHTTPUpdateServer updateServer;
-AsyncWebServer server(80);
+//WiFiManager wifiManager;
+//ESPAsyncHTTPUpdateServer updateServer;
+//AsyncWebServer server(80);
 
 // pinout def
 const int PIN_ENCODER_BUTTON = 13;
@@ -27,6 +27,7 @@ const int oled_sda = 4;
 const int oled_scl = 5;
 const int heater_pin = 11;
 const int fan_pin = 7;
+//the lower pins of the esp8266-12e must not be used (6 to 11)
 
 // const values
 const int sResistor = 235000;
@@ -92,7 +93,6 @@ void updateLCD(){
   //lastDisplayUpdate = millis();
     //oled.print(String(encoderPos) + " C", 0, 0);
     //oled.print(String(readTemp()) + " C", 32, 0);
-    oled.begin();
     oled << "Hello World!" << 64 << 32; // Print "Hello World!" at the center of the screen
     oled.inflate(); // Render the items on the display
     //delay(1000); // Wait for 1 second
@@ -140,28 +140,30 @@ void IRAM_ATTR updateEncoder()
 void setup() 
 {
   Serial.begin(115200);
-  //oled.begin();
+  oled.begin();
+  //apparently using too many gpio generates a watchdog error
   pinMode(PIN_ADC,INPUT);
   pinMode(PIN_ENCODER_BUTTON,INPUT);
   pinMode(PIN_ENCODER_A,INPUT);
   pinMode(PIN_ENCODER_B,INPUT);
   pinMode(BEEPER,OUTPUT);
-  pinMode(heater_pin,OUTPUT);
-  pinMode(fan_pin,OUTPUT);
+  //pinMode(heater_pin,OUTPUT);
+  //pinMode(fan_pin,OUTPUT);
 
-  attachInterrupt(PIN_ENCODER_A, updateEncoder, FALLING);
+  //attachInterrupt(PIN_ENCODER_A, updateEncoder, FALLING);
 
-  wifiManager.autoConnect("AutoConnectAP", "password123");
+  //wifiManager.autoConnect("AutoConnectAP", "password123");
 
-  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
-        request->send(200, "text/plain", "Hello, world");
-    });
+  //server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
+  //      request->send(200, "text/plain", "Hello, world");
+  //  });
 
-  server.begin();
+  //server.begin();
 }
 
 void loop() 
 {
+  Serial.println("Got Here");
   updateLCD();
   //cook_cicle();
   delay(100);
