@@ -3,17 +3,22 @@
 #include <ESPAsyncTCP.h>
 #define WEBSERVER_H "fix confict"
 #include <WiFiManager.h>
+#include <ESPAsyncWebServer.h>
 #include <ESPAsyncHTTPUpdateServer.h>
-#include <SSD1306.h>
+// --- CHANGED: Using the ThingPulse library header ---
+#include <SSD1306Wire.h> 
+#include <OLEDDisplayFonts.h>
 #include <RunningMedian.h>
 
+
 // --- Hardware Definitions ---
-// User specified library constructor
-OLED oled(128, 64); 
+// Address 0x3c, SDA=4, SCL=5 (Standard for ESP8266)
+SSD1306Wire oled(0x3c, 4, 5); 
+
 RunningMedian samples = RunningMedian(10); 
 WiFiManager wifiManager;
-ESPAsyncHTTPUpdateServer updateServer;
 AsyncWebServer server(80);
+ESPAsyncHTTPUpdateServer updateServer;
 
 const int PIN_ENCODER_BUTTON = 13;
 const int PIN_ENCODER_A = 0;
@@ -28,7 +33,7 @@ const int sResistor = 235000;
 const int thermistor_R_nom = 100000;
 const int thermistor_beta_coef = 3974.0;
 const int thermistor_nom_temp = 298.15;
-const float TEMP_HYSTERESIS = 2.0;
+const float TEMP_HYSTERESIS = 10.0;
 
 // --- Global Variables ---
 volatile int encoderCount = 0; 
@@ -41,7 +46,6 @@ bool flipAlertDone = false;
 enum SystemState {
   STATE_SET_TEMP,
   STATE_SET_TIME,
-  //STATE_PREHEATING, //not sure if I need this
   STATE_COOKING,
   STATE_DONE
 };
@@ -61,12 +65,12 @@ void IRAM_ATTR updateEncoder() {
   }
 }
 
-// --- Helper: Button Press Detection (Non-Blocking) ---
+// --- Helper: Button Press ---
 bool isButtonPressed() {
   if (digitalRead(PIN_ENCODER_BUTTON) == LOW) {
     if (!buttonActive) {
       buttonActive = true;
-      delay(20); // Debounce
+      delay(20); 
       return true; 
     }
   } else {
@@ -79,34 +83,31 @@ bool isButtonPressed() {
 float readTemp() {
   int raw_ADC = analogRead(PIN_ADC);
   samples.add(raw_ADC);
-  
-  if (samples.getMedian() == 0) return 0.0; // Protect against div/0
+  if (samples.getMedian() == 0) return 0.0;
 
   float voltage = samples.getMedian() * (1.0 / 1024.0);
-  // Ensure your divider math matches your physical wiring!
   float thermistor_R = (voltage * sResistor) / (3.3 - voltage);
-  
   float tempC = ((thermistor_beta_coef * thermistor_nom_temp) / 
                 (thermistor_beta_coef + (thermistor_nom_temp * log(thermistor_R / thermistor_R_nom)))) - 273.15;
   return tempC;
 }
 
-// --- Helper: Beep ---
 void beep(int duration, int freq = 1000) {
   tone(BEEPER, freq, duration);
 }
 
-// --- Core Logic: Temperature Control ---
+// --- Control Logic ---
 void runControlLoop() {
   float currentTemp = readTemp();
   
-  if (currentTemp > 80 || currentState == STATE_COOKING) { // Fan safety threshold
-    digitalWrite(FAN_PIN, LOW);
+  // Fan Logic
+  if (currentTemp > 80 || currentState == STATE_COOKING) { 
+    digitalWrite(FAN_PIN, LOW); 
   } else {
     digitalWrite(FAN_PIN, HIGH);
   }
 
-  // Only heat if we are actually in cooking state
+  // Heater Logic
   if (currentState == STATE_COOKING) {
     if (currentTemp < cook.target_temp - TEMP_HYSTERESIS) {
       digitalWrite(HEATER_PIN, HIGH);
@@ -118,20 +119,35 @@ void runControlLoop() {
   }
 }
 
-// --- Display Rendering (Updated for styropyr0/SSD1306) ---
+// --- Display Rendering (ThingPulse Syntax) ---
 void drawUI(float currentTemp) {
-  oled.clearScr(); // Library specific clear
+  oled.clear(); // Standard clear
+
+  // 1. TOP BAR: IP Address
+  oled.setFont(ArialMT_Plain_10);
+  oled.setTextAlignment(TEXT_ALIGN_LEFT);
+  String ipStr = "IP: " + WiFi.localIP().toString();
+  oled.drawString(0, 0, ipStr); // syntax: drawString(x, y, text)
 
   switch (currentState) {
     case STATE_SET_TEMP:
-      oled.print("Set Temp:", 10, 10);
-      // Using Big numbers if your library supports valid fonts, otherwise standard print
-      oled.print(String((int)cook.target_temp) + " C", 30, 30);
+      // Label (Small)
+      oled.setFont(ArialMT_Plain_10);
+      oled.drawString(0, 20, "Set Temp:");
+      
+      // Value (Big)
+      oled.setFont(ArialMT_Plain_24);
+      oled.drawString(20, 32, String((int)cook.target_temp) + " C");
       break;
 
     case STATE_SET_TIME:
-      oled.print("Set Time:", 10, 10);
-      oled.print(String((int)cook.duration_minutes) + " Min", 30, 30);
+      // Label (Small)
+      oled.setFont(ArialMT_Plain_10);
+      oled.drawString(0, 20, "Set Time:");
+      
+      // Value (Big)
+      oled.setFont(ArialMT_Plain_24);
+      oled.drawString(20, 32, String((int)cook.duration_minutes) + " Min");
       break;
 
     case STATE_COOKING: {
@@ -140,30 +156,35 @@ void drawUI(float currentTemp) {
       long remaining = totalSeconds - elapsed;
       if (remaining < 0) remaining = 0;
 
-      oled.print("Cooking...", 0, 0);
-      oled.print("T:" + String((int)currentTemp) + "C", 80, 0);
+      // Header info (Small)
+      oled.setFont(ArialMT_Plain_10);
+      oled.drawString(0, 16, "Cooking...");
+      oled.drawString(80, 16, "T:" + String((int)currentTemp) + "C");
       
+      // Timer (Big)
+      oled.setFont(ArialMT_Plain_24);
       String timeStr = String(remaining / 60) + ":" + ((remaining % 60 < 10) ? "0" : "") + String(remaining % 60);
-      oled.print(timeStr, 30, 30);
+      oled.drawString(25, 35, timeStr);
       break;
     }
 
     case STATE_DONE:
-      oled.print("DONE!", 40, 30);
+      oled.setFont(ArialMT_Plain_24);
+      oled.drawString(25, 25, "DONE!");
       break;
   }
   
-  oled.inflate(); // Library specific render command
+  oled.display(); // Standard render command
 }
 
 void setup() {
   Serial.begin(115200);
   
-  // Library specific init
-  oled.begin(); 
+  // ThingPulse init
+  oled.init(); 
+  oled.flipScreenVertically();
   
   pinMode(PIN_ADC, INPUT);
-  // NOTE: Changed to INPUT_PULLUP. If you have a physical resistor, change back to INPUT
   pinMode(PIN_ENCODER_BUTTON, INPUT_PULLUP); 
   pinMode(PIN_ENCODER_A, INPUT);
   pinMode(PIN_ENCODER_B, INPUT);
@@ -173,9 +194,16 @@ void setup() {
 
   attachInterrupt(digitalPinToInterrupt(PIN_ENCODER_A), updateEncoder, FALLING);
 
-  wifiManager.autoConnect("AutoConnectAP", "password123");
-  server.begin();
+  wifiManager.autoConnect("AirFryerAP", "password123");
   
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
+    String msg = "System Online.\nTemperature: " + String(readTemp()) + " C";
+    request->send(200, "text/plain", msg);
+  });
+
+  updateServer.setup(&server);
+  server.begin();
+
   // Initial Defaults
   cook.target_temp = 180;
   cook.duration_minutes = 30;
@@ -187,7 +215,6 @@ void loop() {
   runControlLoop();
 
   switch (currentState) {
-    // --- STEP 1: SELECT TEMPERATURE ---
     case STATE_SET_TEMP:
       if (encoderCount < 0) encoderCount = 0;
       if (encoderCount > 250) encoderCount = 250;
@@ -196,11 +223,10 @@ void loop() {
       if (isButtonPressed()) {
         beep(100);
         currentState = STATE_SET_TIME;
-        encoderCount = 30; // Reset encoder for Time
+        encoderCount = 30; 
       }
       break;
 
-    // --- STEP 2: SELECT TIME ---
     case STATE_SET_TIME:
       if (encoderCount < 1) encoderCount = 1;
       if (encoderCount > 120) encoderCount = 120;
@@ -214,25 +240,21 @@ void loop() {
       }
       break;
 
-    // --- STEP 3: COOKING PROCESS ---
     case STATE_COOKING:
       if (millis() - cookStartTime >= (cook.duration_minutes * 60 * 1000)) {
         beep(1000);
         currentState = STATE_DONE;
       }
-      // Halfway Alert 
       if (!flipAlertDone && (millis() - cookStartTime > (cook.duration_minutes * 60 * 1000) / 2)) {
          beep(200); delay(100); beep(200); 
          flipAlertDone = true;
       }
-      // Cancel with button
       if (isButtonPressed()) {
         currentState = STATE_SET_TEMP;
         encoderCount = cook.target_temp;
       }
       break;
 
-    // --- STEP 4: FINISHED ---
     case STATE_DONE:
       if (isButtonPressed()) {
         currentState = STATE_SET_TEMP;
@@ -241,7 +263,6 @@ void loop() {
       break;
   }
 
-  // Update Display periodically
   if (millis() - lastDisplayUpdate > 100) {
     drawUI(currentT);
     lastDisplayUpdate = millis();
