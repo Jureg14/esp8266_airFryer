@@ -5,7 +5,6 @@
 #include <WiFiManager.h>
 #include <ESPAsyncWebServer.h>
 #include <ESPAsyncHTTPUpdateServer.h>
-// --- CHANGED: Using the ThingPulse library header ---
 #include <SSD1306Wire.h> 
 #include <OLEDDisplayFonts.h>
 #include <RunningMedian.h>
@@ -119,7 +118,7 @@ void runControlLoop() {
   }
 }
 
-// --- Display Rendering (ThingPulse Syntax) ---
+// --- Display Rendering ---
 void drawUI(float currentTemp) {
   oled.clear(); // Standard clear
 
@@ -158,8 +157,8 @@ void drawUI(float currentTemp) {
 
       // Header info (Small)
       oled.setFont(ArialMT_Plain_10);
-      oled.drawString(0, 16, "Cooking...");
-      oled.drawString(80, 16, "T:" + String((int)currentTemp) + "C");
+      oled.drawString(0, 20, "Cooking...");
+      oled.drawString(80, 20, "T:" + String((int)currentTemp) + "C");
       
       // Timer (Big)
       oled.setFont(ArialMT_Plain_24);
