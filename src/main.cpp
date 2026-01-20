@@ -88,7 +88,12 @@ float readTemp() {
   float thermistor_R = (voltage * sResistor) / (3.3 - voltage);
   float tempC = ((thermistor_beta_coef * thermistor_nom_temp) / 
                 (thermistor_beta_coef + (thermistor_nom_temp * log(thermistor_R / thermistor_R_nom)))) - 273.15;
-  return tempC;
+  float tempC_adjusted = 1.4853 * tempC + 7.2363;
+  return tempC_adjusted;
+
+  //after some manual reading and data logging, i got this:
+  //Calibration equation:
+  //True Temperature = 1.4853 * Device Reading + 7.2363
 }
 
 void beep(int duration, int freq = 1000) {
