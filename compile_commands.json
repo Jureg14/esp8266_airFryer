@@ -1,0 +1,236 @@
+[
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\CDC.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\CDC.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\CDC.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\CDC.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\HardwareSerial.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\HardwareSerial.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\HardwareSerial0.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial0.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial0.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\HardwareSerial0.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\HardwareSerial1.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial1.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial1.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\HardwareSerial1.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\HardwareSerial2.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial2.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial2.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\HardwareSerial2.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\HardwareSerial3.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial3.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial3.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\HardwareSerial3.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\IPAddress.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\IPAddress.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\IPAddress.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\IPAddress.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\PluggableUSB.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\PluggableUSB.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\PluggableUSB.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\PluggableUSB.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\Print.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Print.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Print.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\Print.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\Stream.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Stream.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Stream.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\Stream.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\Tone.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Tone.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Tone.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\Tone.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\USBCore.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\USBCore.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\USBCore.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\USBCore.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\promicro\\FrameworkArduino\\WInterrupts.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WInterrupts.c",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WInterrupts.c",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\WInterrupts.c.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\WMath.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WMath.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WMath.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\WMath.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\WString.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WString.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WString.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\WString.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\abi.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\abi.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\abi.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\abi.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\promicro\\FrameworkArduino\\hooks.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\hooks.c",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\hooks.c",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\hooks.c.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\main.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\main.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\main.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\FrameworkArduino\\new.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\new.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\new.cpp",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\new.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\promicro\\FrameworkArduino\\wiring.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring.c",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring.c",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\wiring.c.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\promicro\\FrameworkArduino\\wiring_analog.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_analog.c",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_analog.c",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\wiring_analog.c.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\promicro\\FrameworkArduino\\wiring_digital.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_digital.c",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_digital.c",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\wiring_digital.c.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -mmcu=atmega32u4 -x assembler-with-cpp -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro -c -o .pio\\build\\promicro\\FrameworkArduino\\wiring_pulse.S.o C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_pulse.S",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_pulse.S",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\wiring_pulse.S.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\promicro\\FrameworkArduino\\wiring_pulse.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_pulse.c",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_pulse.c",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\wiring_pulse.c.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\promicro\\FrameworkArduino\\wiring_shift.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_shift.c",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_shift.c",
+        "output": ".pio\\build\\promicro\\FrameworkArduino\\wiring_shift.c.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\lib922\\RunningMedian\\RunningMedian.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -I.pio\\libdeps\\promicro\\RunningMedian -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro .pio\\libdeps\\promicro\\RunningMedian\\RunningMedian.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\RunningMedian\\RunningMedian.cpp",
+        "output": ".pio\\build\\promicro\\lib922\\RunningMedian\\RunningMedian.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\libc41\\Wire\\Wire.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src\\Wire.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src\\Wire.cpp",
+        "output": ".pio\\build\\promicro\\libc41\\Wire\\Wire.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\promicro\\libc41\\Wire\\utility\\twi.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src\\utility\\twi.c",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src\\utility\\twi.c",
+        "output": ".pio\\build\\promicro\\libc41\\Wire\\utility\\twi.c.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\lib59f\\SPI\\SPI.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src\\SPI.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "C:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src\\SPI.cpp",
+        "output": ".pio\\build\\promicro\\lib59f\\SPI\\SPI.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\promicro\\lib72a\\Adafruit BusIO\\Adafruit_BusIO_Register.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro \".pio\\libdeps\\promicro\\Adafruit BusIO\\Adafruit_BusIO_Register.cpp\"",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\Adafruit BusIO\\Adafruit_BusIO_Register.cpp",
+        "output": ".pio\\build\\promicro\\lib72a\\Adafruit BusIO\\Adafruit_BusIO_Register.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\promicro\\lib72a\\Adafruit BusIO\\Adafruit_GenericDevice.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro \".pio\\libdeps\\promicro\\Adafruit BusIO\\Adafruit_GenericDevice.cpp\"",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\Adafruit BusIO\\Adafruit_GenericDevice.cpp",
+        "output": ".pio\\build\\promicro\\lib72a\\Adafruit BusIO\\Adafruit_GenericDevice.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\promicro\\lib72a\\Adafruit BusIO\\Adafruit_I2CDevice.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro \".pio\\libdeps\\promicro\\Adafruit BusIO\\Adafruit_I2CDevice.cpp\"",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\Adafruit BusIO\\Adafruit_I2CDevice.cpp",
+        "output": ".pio\\build\\promicro\\lib72a\\Adafruit BusIO\\Adafruit_I2CDevice.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\promicro\\lib72a\\Adafruit BusIO\\Adafruit_SPIDevice.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro \".pio\\libdeps\\promicro\\Adafruit BusIO\\Adafruit_SPIDevice.cpp\"",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\Adafruit BusIO\\Adafruit_SPIDevice.cpp",
+        "output": ".pio\\build\\promicro\\lib72a\\Adafruit BusIO\\Adafruit_SPIDevice.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\promicro\\libdc8\\Adafruit GFX Library\\Adafruit_GFX.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" \"-I.pio\\libdeps\\promicro\\Adafruit GFX Library\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro \".pio\\libdeps\\promicro\\Adafruit GFX Library\\Adafruit_GFX.cpp\"",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\Adafruit GFX Library\\Adafruit_GFX.cpp",
+        "output": ".pio\\build\\promicro\\libdc8\\Adafruit GFX Library\\Adafruit_GFX.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\promicro\\libdc8\\Adafruit GFX Library\\Adafruit_GrayOLED.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" \"-I.pio\\libdeps\\promicro\\Adafruit GFX Library\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro \".pio\\libdeps\\promicro\\Adafruit GFX Library\\Adafruit_GrayOLED.cpp\"",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\Adafruit GFX Library\\Adafruit_GrayOLED.cpp",
+        "output": ".pio\\build\\promicro\\libdc8\\Adafruit GFX Library\\Adafruit_GrayOLED.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\promicro\\libdc8\\Adafruit GFX Library\\Adafruit_SPITFT.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" \"-I.pio\\libdeps\\promicro\\Adafruit GFX Library\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro \".pio\\libdeps\\promicro\\Adafruit GFX Library\\Adafruit_SPITFT.cpp\"",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\Adafruit GFX Library\\Adafruit_SPITFT.cpp",
+        "output": ".pio\\build\\promicro\\libdc8\\Adafruit GFX Library\\Adafruit_SPITFT.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o \".pio\\build\\promicro\\libdc8\\Adafruit GFX Library\\glcdfont.c.o\" -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" \"-I.pio\\libdeps\\promicro\\Adafruit GFX Library\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro \".pio\\libdeps\\promicro\\Adafruit GFX Library\\glcdfont.c\"",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\Adafruit GFX Library\\glcdfont.c",
+        "output": ".pio\\build\\promicro\\libdc8\\Adafruit GFX Library\\glcdfont.c.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\promicro\\lib8d2\\Adafruit SSD1306\\Adafruit_SSD1306.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" \"-I.pio\\libdeps\\promicro\\Adafruit SSD1306\" \"-I.pio\\libdeps\\promicro\\Adafruit GFX Library\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro \".pio\\libdeps\\promicro\\Adafruit SSD1306\\Adafruit_SSD1306.cpp\"",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": ".pio\\libdeps\\promicro\\Adafruit SSD1306\\Adafruit_SSD1306.cpp",
+        "output": ".pio\\build\\promicro\\lib8d2\\Adafruit SSD1306\\Adafruit_SSD1306.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\juuj\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\promicro\\src\\main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega32u4 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_PROMICRO16 -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -DUSB_VID=0x1B4F -DUSB_PID=0x9206 \"-DUSB_PRODUCT=\\\"SparkFun Pro Micro\\\"\" -DUSB_MANUFACTURER=\\\"SparkFun\\\" -Iinclude -Isrc \"-I.pio\\libdeps\\promicro\\Adafruit SSD1306\" \"-I.pio\\libdeps\\promicro\\Adafruit GFX Library\" \"-I.pio\\libdeps\\promicro\\Adafruit BusIO\" -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -I.pio\\libdeps\\promicro\\RunningMedian -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\juuj\\.platformio\\packages\\framework-arduino-avr\\variants\\sparkfun_promicro src\\main.cpp",
+        "directory": "C:\\Users\\juuj\\Documents\\PlatformIO\\Projects\\esp8266_airFryer",
+        "file": "src\\main.cpp",
+        "output": ".pio\\build\\promicro\\src\\main.cpp.o"
+    }
+]
